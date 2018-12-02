@@ -116,7 +116,7 @@ $ workon cv
 $ python
 >>> import cv2
 >>> cv2.__version__
-'4.0.0'
+'버 전 정 보'
 >>> exit()
 ```
 
