@@ -66,7 +66,6 @@ python3 --version
 아래와 같이 bash_profile 에 추가한다.
 ```bash
 # Adding this line to end of .bash_profile will make python command 
-# point to python2
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 ```
