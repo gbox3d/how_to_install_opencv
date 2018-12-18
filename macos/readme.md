@@ -70,7 +70,7 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 ```
 
-3. 버츄얼환경에 파이썬 설치하기
+3. 버츄얼환경에 파이썬 라이브러리 설치하기
 
 가상 개발환경 만들기 위하여 virtualenv 설치하기
 ```bash
@@ -101,8 +101,21 @@ pip install numpy scipy matplotlib scikit-image scikit-learn ipython pandas
 deactivate
 ```
 
-```bash
+4. opencv 설치하기 
 
+1) brew 를 이용한 간편 설치 
+현재(2018.12.18)는 opencv 버전 3.4.3이 설치된다.
+```bash
+brew install opencv
+```
+
+sitepackage 경로를 추가 해준다.
+```bash
+echo /usr/local/opt/opencv/lib/python3.7/site-packages >> /usr/local/lib/python3.7/site-packages/opencv3.pth
+```
+
+가상환경에 심볼릭 링크를 만든다.
+```bash
 cd ~/.virtualenvs/opencvstudy-py3/lib/python3.7/site-packages/
 ln -s /usr/local/opt/opencv/lib/python3.7/site-packages/cv2.cpython-37m-darwin.so cv2.so
 
@@ -119,6 +132,18 @@ $ python
 >>> exit()
 ```
 
+2) 직접 소스 컴파일하기 
+
+xcode가 설치 되어있다고 가정하고 cmake,qt5 를 설치한다.
+
+```bash
+brew install cmake
+brew install qt5
+ 
+QT5PATH=/usr/local/Cellar/qt/<설치된 버전 이름>
+```
+
+그 다음엔 첨부된 install_cv_py.sh 실행한다.
 
 ### 참고자료 
 
